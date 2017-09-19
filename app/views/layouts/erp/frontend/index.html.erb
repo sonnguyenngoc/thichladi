@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!--[if lt IE 9 ]> <html lang="en" dir="ltr" class="no-js ie-old"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" dir="ltr" class="no-js ie9"> <![endif]-->
+<!--[if IE 10 ]> <html lang="en" dir="ltr" class="no-js ie10"> <![endif]-->
+<!--[if (gt IE 10)|!(IE)]><!-->
+<html lang="en" dir="ltr" class="no-js">
+<!--<![endif]-->
+
+<head>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- META TAGS                                 -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <!-- Always force latest IE rendering engine -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile specific meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- PAGE TITLE                                -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <title>Thích Là Đi | Công Ty TNHH MTV Du Lịch Khám Phá Mới</title>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- SEO METAS                                 -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="description" content="">
+    <meta name="keyworks" content="">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="author" content="Công Ty TNHH Du Lịch Khám Phá Mới">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- PAGE FAVICON                              -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <%= favicon_link_tag '/frontend/assets/images/favicon/apple-touch-icon.png', rel: 'apple-touch-icon' %>
+    <%= favicon_link_tag '/frontend/assets/images/favicon/favicon.png', rel: 'icon', type: '/frontend/assets/images/favicon/png' %>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- GOOGLE FONTS                              -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Roboto:400,500,700,900" %>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Include CSS Filess                        -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- Bootstrap -->
+    <%= stylesheet_link_tag "/frontend/assets/css/bootstrap.min.css" %>
+    
+    <!-- Font Awesome -->
+    <%= stylesheet_link_tag "/frontend/assets/vendors/font-awesome/css/font-awesome.min.css" %>
+
+    <!-- Linearicons -->
+    <%= stylesheet_link_tag "/frontend/assets/vendors/linearicons/css/linearicons.css" %>
+
+    <!-- Owl Carousel -->
+    <%= stylesheet_link_tag "/frontend/assets/vendors/owl-carousel/owl.carousel.min.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/vendors/owl-carousel/owl.theme.min.css" %>
+
+    <!-- Flex Slider -->
+    <%= stylesheet_link_tag "/frontend/assets/vendors/flexslider/flexslider.css" %>
+
+    <!-- Template Stylesheet -->
+    <%= stylesheet_link_tag "/frontend/assets/css/base.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/css/style.css" %>
+    <%= stylesheet_link_tag "/frontend/assets/css/custom.css" %>
+
+</head>
+
+<body id="body" class="wide-layout preloader-active">
+
+    <!--[if lt IE 9]>
+        <p class="browserupgrade alert-error">
+        	Bạn đang sử dụng một trình duyệt <strong>lỗi thời</strong>. Hãy <%= link_to "nâng cấp trình duyệt", "https://www.google.com/intl/vi_vn/chrome/browser/index.html" %> để có những trải nghiệm tốt nhất.
+        </p>
+    <![endif]-->
+
+    <noscript>
+        <div class="noscript alert-error">
+            Để website được hoạt động một cách tốt nhất, bạn cần kích hoạt JavaScript. Hướng dẩn <%= link_to "kích hoạt JavaScript cho trình duyệt", "http://www.enable-javascript.com/" %>.
+        </div>
+    </noscript>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- PRELOADER                                 -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- Preloader -->
+    <%= render "erp/thichladi/frontend/modules/preloader" %>
+    <!-- End Preloader -->
+    
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- WRAPPER                                   -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <div id="pageWrapper" class="page-wrapper">
+        <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+        <header id="mainHeader" class="main-header">
+
+            <!-- Top Bar -->
+            <%= render "erp/thichladi/frontend/modules/header/top_bar" %>
+            <!-- End Top Bar -->
+
+            <!-- Header Header -->
+            <%= render "erp/thichladi/frontend/modules/header/header" %>
+            <!-- End Header Header -->
+
+            <!-- Header Menu -->
+            <%= render "erp/thichladi/frontend/modules/header/menu" %>
+            <!-- End Header Menu -->
+        </header>
+        <!-- –––––––––––––––[ HEADER ]––––––––––––––– -->
+
+        <!-- –––––––––––––––[ PAGE CONTENT ]––––––––––––––– -->
+	<main id="mainContent" class="main-content">
+	     <%= yield %>
+	</main>
+        <!-- –––––––––––––––[ END PAGE CONTENT ]––––––––––––––– -->
+        
+        <!-- –––––––––––––––[ FOOTER ]––––––––––––––– -->
+        <%= render "erp/thichladi/frontend/modules/footer/top_area" %>
+        <%= render "erp/thichladi/frontend/modules/footer/copyright" %>
+        <!-- –––––––––––––––[ END FOOTER ]––––––––––––––– -->
+    </div>
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- END WRAPPER                               -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+
+    <!-- ========== CALL NOW ========== -->
+    <%= render "erp/thichladi/frontend/modules/call_now" %>
+
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- SCRIPTS                                   -->
+    <!-- ––––––––––––––––––––––––––––––––––––––––– -->
+    <%= render "erp/thichladi/frontend/modules/javascripts" %>    
+</body>
+
+</html>

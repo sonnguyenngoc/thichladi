@@ -1,0 +1,38 @@
+<div class="header-header bg-white">
+    <div class="container">
+        <div class="row row-rl-0 row-tb-20 row-md-cell">
+            <div class="brand col-md-3 t-xs-center t-md-left valign-middle">
+                <%= link_to image_tag("/frontend/assets/images/logo-newdiscovery.png",
+                                      alt: "Quay về trang chủ website thichladi.info", width: "180"), erp_thichladi.root_path,
+                                      class: "logo", title: "Quay về trang chủ website thichladi.info" %>
+            </div>
+            <div class="header-search col-md-9">
+                <div class="row row-tb-10 ">
+                    <div class="col-sm-12">
+                        <form class="search-form">
+                            <div class="input-group">
+                                <input type="text" class="form-control input-lg search-input" placeholder="Tìm kiếm tại đây..." required="required">
+                                <div class="input-group-btn">
+                                    <div class="input-group">
+                                        <select class="form-control input-lg search-select">
+                                            <option>Lựa chọn </option>
+                                            <option>Tour Miền Bắc</option>
+                                            <option>Tour Miền Trung</option>
+                                            <option>Tour Miền Nam</option>
+                                            <option>Tour Đông Nam Á</option>
+                                        </select>
+                                        <div class="input-group-btn">
+                                            <button type="submit" class="btn btn-lg btn-search btn-block">
+                                                <i class="fa fa-search font-16"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
