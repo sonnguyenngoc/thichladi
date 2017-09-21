@@ -1,0 +1,19 @@
+<li class="nav-item <%= "active open" if ["erp/mini_stores/backend/slideshows"].include?(params[:controller]) %>">
+    <a href="javascript:;" class="nav-link nav-toggle">
+        <i class="fa fa-picture-o"></i>
+        <span class="title"><%= t('.slideshow') %></span>
+        <% if ["erp/mini_stores/backend/slideshows"].include?(params[:controller]) %>
+            <span class="selected"></span>
+            <span class="arrow open"></span>
+        <% else %>
+            <span class="arrow"></span>
+        <% end %>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item <%= "active" if ["erp/mini_stores/backend/slideshows"].include?(params[:controller]) %>">
+            <a href="<%= erp_mini_stores.backend_slideshows_path %>" class="nav-link ">
+                <span class="title"><%= t('.slideshows') %></span>
+            </a>
+        </li>
+    </ul>
+</li>

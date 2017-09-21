@@ -1,0 +1,18 @@
+vi:
+  layouts:
+    erp:
+      backend:
+        menu:
+          tour:
+            tour: "Tour du lịch"
+            categories: "Chuyên mục tour"
+          article:
+            article: "Quản lý bài viết"
+            articles: "Tất cả bài viết"
+            article_categories: "Chuyên mục bài viết"
+          slideshow:
+            slideshow: "Quản lý trình chiếu"
+            slideshows: "Tất cả trình chiếu"
+          system:
+            system: "Hệ thống"
+            users: "Danh sách tài khoản"
