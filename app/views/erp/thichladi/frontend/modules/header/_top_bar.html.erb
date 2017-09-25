@@ -3,24 +3,10 @@
         <div class="row">
             <div class="col-sm-12 col-md-12 is-hidden-sm-down">
                 <ul class="nav-top nav-top-left list-inline t-left">
-                    <li>
-                        <a href="">
-                            <i class="fa fa-home"></i>
-                            Trang Chủ
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <i class="fa fa-globe"></i>
-                            Tour Du Lịch Trong Nước
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-                            <i class="fa fa-plane"></i>
-                            Tour Du Lịch Nước Ngoài
-                        </a>
-                    </li>
+                    <li><%= link_to '<i class="fa fa-home"></i> Trang Chủ'.html_safe, erp_thichladi.root_path, title: "" %></li>
+                    <% Erp::Tours::Menu.get_main_menus.each do |menu| %>
+                    <li><%= link_to '<i class="fa fa-plane"></i>'.html_safe + menu.menu_name, "", title: menu.menu_name %></li>
+                    <% end %>
                     <li>
                         <a href="">
                             <i class="fa fa-support"></i>

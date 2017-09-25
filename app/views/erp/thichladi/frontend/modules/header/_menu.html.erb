@@ -10,138 +10,29 @@
             </div>
             <div id="header-navbar" class="nav-collapse">
                 <ul class="nav-menu">
-                    <li class="active">
-                        <a href="index.html">Trang Chủ</a>
-                    </li>                                                                
-                    <li>
-                        <a href="javascript:void(0)">Tour Du Lịch Trong Nước</a>
+                    <li class="active"><%= link_to "Trang Chủ", erp_thichladi.root_path, title: "" %></li>
+                    <% Erp::Tours::Menu.get_menus.each do |menu| %>
+                    <li><%= link_to menu.menu_name, "javascript:void(0)" %>
                         <ul>
-                            <li>
-                                <a href="">Tour Du Lịch Miền Bắc</a>
-                            </li>
-                            <li>
-                                <a href="">Tour Du Lịch Miền Trung</a>
-                            </li>
-                            <li>
-                                <a href="">Tour Du Lịch Miền Nam</a>
-                            </li>
+                            <% menu.children.get_active.each do |child_menu| %>
+                            <li><%= link_to child_menu.menu_name, "", title: child_menu.menu_name %></li>
+                            <% end %>
                         </ul>
                     </li>
+                    <% end %>
                     <li>
-                        <a href="javascript:void(0)">Tour Du Lịch Nước Ngoài</a>
+                        <a href="javascript:void(0)"><%= Erp::MiniStores::ArticleCategory.get_category_by_alias_blog.article_category_name %></a>
                         <ul>
+                            <% Erp::MiniStores::ArticleCategory.get_category_by_alias_blog.children.each do |child_1| %>
                             <li>
-                                <a href="">Tour Du Lịch Đông Nam Á</a>
-                            </li>
-                            <li>
-                                <a href="">Tour Du Lịch Châu Á</a>
-                            </li>
-                            <li>
-                                <a href="">Tour Du Lịch Châu Âu</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">Tin Tức Du Lịch</a>
-                        <ul>
-                            <li>
-                                <a href="javascript:void(0)">Tin Tức - Sự Kiện</a>
+                                <%= link_to child_1.article_category_name, "", title: child_1.article_category_name %>
                                 <ul>
-                                    <li>
-                                        <a href="">Tin Trong Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Ngoài Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Khuyến Mãi</a>
-                                    </li>
+                                    <% child_1.children.get_active.each do |child_2| %>
+                                    <li><%= link_to child_2.article_category_name, "", title: child_2.article_category_name %></li>
+                                    <% end %>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="javascript:void(0)">Danh Lam Thắng Cảnh</a>
-                                <ul>
-                                    <li>
-                                        <a href="">Tin Trong Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Ngoài Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Khuyến Mãi</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Lễ Hội</a>
-                                <ul>
-                                    <li>
-                                        <a href="">Tin Trong Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Ngoài Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Khuyến Mãi</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Ẩm Thực</a>
-                                <ul>
-                                    <li>
-                                        <a href="">Tin Trong Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Ngoài Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Khuyến Mãi</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Non Nước Việt Nam</a>
-                                <ul>
-                                    <li>
-                                        <a href="">Tin Trong Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Ngoài Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Khuyến Mãi</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Cảm Nang Du Lịch</a>
-                                <ul>
-                                    <li>
-                                        <a href="">Tin Trong Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Ngoài Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Khuyến Mãi</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">Giải Trí</a>
-                                <ul>
-                                    <li>
-                                        <a href="">Tin Trong Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Ngoài Nước</a>
-                                    </li>
-                                    <li>
-                                        <a href="">Tin Khuyến Mãi</a>
-                                    </li>
-                                </ul>
-                            </li>
+                            <% end %>
                         </ul>
                     </li>
                     <li><%= link_to "Giới Thiệu", erp_thichladi.intro_path %></li>

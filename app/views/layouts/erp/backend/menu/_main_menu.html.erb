@@ -1,0 +1,19 @@
+<li class="nav-item <%= "active open" if ["erp/tours/backend/menus"].include?(params[:controller]) %>">
+    <a href="javascript:;" class="nav-link nav-toggle">
+        <i class="fa fa-sitemap"></i>
+        <span class="title"><%= t('.menu') %></span>
+        <% if ["erp/tours/backend/menus"].include?(params[:controller]) %>
+            <span class="selected"></span>
+            <span class="arrow open"></span>
+        <% else %>
+            <span class="arrow"></span>
+        <% end %>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item <%= "active" if ["erp/tours/backend/menus"].include?(params[:controller]) %>">
+            <a href="<%= erp_tours.backend_menus_path %>" class="nav-link ">
+                <span class="title"><%= t('.menus') %></span>
+            </a>
+        </li>
+    </ul>
+</li>

@@ -5,7 +5,8 @@ vi:
         menu:
           tour:
             tour: "Tour du lịch"
-            categories: "Chuyên mục tour"
+            tours: "Danh sách tour"
+            categories: "Chuyên mục tour"            
           article:
             article: "Quản lý bài viết"
             articles: "Tất cả bài viết"
@@ -16,3 +17,6 @@ vi:
           system:
             system: "Hệ thống"
             users: "Danh sách tài khoản"
+          main_menu:
+            menu: "Quản lý menu"
+            menus: "Danh sách menu"
