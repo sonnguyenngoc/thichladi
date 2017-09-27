@@ -15,7 +15,7 @@
                     <li><%= link_to menu.menu_name, "javascript:void(0)" %>
                         <ul>
                             <% menu.children.get_active.each do |child_menu| %>
-                            <li><%= link_to child_menu.menu_name, "", title: child_menu.menu_name %></li>
+                            <li><%= link_to child_menu.menu_name, menu_link(child_menu), title: child_menu.menu_name %></li>
                             <% end %>
                         </ul>
                     </li>
@@ -25,10 +25,10 @@
                         <ul>
                             <% Erp::MiniStores::ArticleCategory.get_category_by_alias_blog.children.each do |child_1| %>
                             <li>
-                                <%= link_to child_1.article_category_name, "", title: child_1.article_category_name %>
+                                <%= link_to child_1.article_category_name, menu_link(child_1), title: child_1.article_category_name %>
                                 <ul>
                                     <% child_1.children.get_active.each do |child_2| %>
-                                    <li><%= link_to child_2.article_category_name, "", title: child_2.article_category_name %></li>
+                                    <li><%= link_to child_2.article_category_name, menu_link(child_2), title: child_2.article_category_name %></li>
                                     <% end %>
                                 </ul>
                             </li>

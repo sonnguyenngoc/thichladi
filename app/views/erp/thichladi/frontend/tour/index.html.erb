@@ -1,0 +1,80 @@
+<div class="page-container ptb-10">
+    <div class="container">
+        <section class="section deals-area ptb-30">
+            <div class="row row-masnory row-tb-20">
+                <% @tours.each do |tour| %>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="deal-single panel">
+                        <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="<%= tour.image_url.medium if tour.image_url.present? %>">
+                            <% if tour.is_discount == true && tour.percent_discount.present? %>
+                            <div class="label-discount left-20 top-15"><%= tour.percent_discount %>%</div>
+                            <% end %>
+                            <ul class="deal-actions top-15 right-20">
+                                <% if tour.tour_program.present? %>
+                                <li>                                                
+                                    <span>
+                                        <%= link_to '<i class="fa fa-download"></i>'.html_safe, tour.tour_program_url, class: "download-document", title: "Tải lịch trình tour", target: "_blank" %>
+                                    </span>                                                
+                                </li>
+                                <% end %>
+                            </ul>
+                            <%= count_down(tour.date_discount_start, tour.date_discount_end) %>
+                        </figure>
+                        <div class="bg-white pt-20 pl-20 pr-15">
+                            <div class="pr-md-10">
+                                <div class="rating mb-10">
+                                    <span class="rating-stars rate-allow" data-rating="4">
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </span>
+                                </div>
+                                <h3 class="deal-title mb-10">
+                                    <%= link_to tour.tour_name, tour_link(tour), title: tour.tour_name %>                                    
+                                </h3>
+                                <ul class="deal-meta list-inline mb-10 color-mid">
+                                    <% if tour.area_position.present? %>
+                                        <li><i class="ico fa fa-map-marker mr-10"></i><%= tour.area_position %></li>
+                                    <% end %>
+                                    <% if tour.transportation.present? %>
+                                        <li><i class="ico fa fa-rocket mr-10"></i><%= tour.transportation %></li>
+                                    <% end %>
+                                    <% if tour.time_line.present? %>
+                                        <li><i class="ico fa fa-clock-o mr-10"></i><%= tour.time_line %></li>
+                                    <% end %>
+                                </ul>
+                                <% if tour.description.present? %>
+                                <p class="text-muted mb-20 text-justify"><%= tour.description if tour.description.present? %></p>
+                                <% end %>
+                            </div>
+                            <div class="deal-price pos-r mb-15">
+                                <h3 class="price ptb-5 text-right">
+                                    <% if tour.is_discount == true && tour.price_discount.present? && tour.percent_discount.present? %>
+                                        <span class="price-sale"><%= format_price(tour.price) %></span>
+                                        <%= format_price(tour.price_discount) %>
+                                    <% else %>
+                                        <%= format_price(tour.price) %>
+                                    <% end %>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+            <% if @tours.count > 10 %>
+            <!-- Page Pagination -->
+            <div class="page-pagination text-center mt-30 p-10 panel">
+                <nav>
+                    <!-- Page Pagination -->
+                    <%= will_paginate @tours, previous_label: 'Trang trước', next_label: 'Trang sau', renderer: BootstrapPagination::Rails %>
+                    <!-- End Page Pagination -->                    
+                </nav>
+            </div>
+            <!-- End Page Pagination -->
+            <% end %>
+        </section>
+    </div>
+</div>

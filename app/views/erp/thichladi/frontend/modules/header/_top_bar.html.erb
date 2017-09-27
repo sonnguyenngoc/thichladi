@@ -5,7 +5,7 @@
                 <ul class="nav-top nav-top-left list-inline t-left">
                     <li><%= link_to '<i class="fa fa-home"></i> Trang Chủ'.html_safe, erp_thichladi.root_path, title: "" %></li>
                     <% Erp::Tours::Menu.get_main_menus.each do |menu| %>
-                    <li><%= link_to '<i class="fa fa-plane"></i>'.html_safe + menu.menu_name, "", title: menu.menu_name %></li>
+                    <li><%= link_to '<i class="fa fa-plane"></i>'.html_safe + menu.menu_name, erp_thichladi.tour_path, title: menu.menu_name %></li>
                     <% end %>
                     <li>
                         <a href="">

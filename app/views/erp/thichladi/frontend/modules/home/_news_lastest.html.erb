@@ -1,0 +1,46 @@
+<section class="section latest-news-area blog-area blog-grid blog-3-col">
+    <header class="panel ptb-15 prl-20 pos-r mb-5">
+        <h3 class="section-title font-18">Tin Tức Mới Nhất</h3>
+        <a href="" class="btn btn-o btn-xs pos-a right-10 pos-tb-center">Xem Tất Cả</a>
+    </header>
+    <div class="row row-tb-20">
+        <% (0..2).each do |blog| %> 
+            <!-- Blog Post -->
+            <div class="blog-post col-xs-12 col-sm-6 col-md-4">
+                <article class="entry panel">
+                    <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="/frontend/assets/images/tin-tuc-du-lich.jpg">
+                        <div class="entry-date">
+                            <h4>14</h4>
+                            <h6>08</h6>
+                        </div>
+                    </figure>
+                    <div class="entry-wrapper pt-20 pb-10 prl-20">
+                        <header class="entry-header">
+                            <h4 class="entry-title mb-10 mb-md-15 font-xs-16 font-sm-18 font-md-16 font-lg-16">
+                                <a href="">Tiêu đề tin tức du lịch mới nhất</a>
+                            </h4>
+                            <div class="entry-meta mb-10">
+                                <ul class="tag-info list-inline">
+                                    <li>
+                                        <i class="icon fa fa-user"></i>
+                                        Đăng bởi: Du Lịch Khám Phá Mới
+                                    </li>                                                    
+                                </ul>
+                            </div>
+                        </header>
+                        <div class="entry-content">
+                            <p class="entry-summary text-justify">Mô tả ngắn về bài viết mô tả ngắn về bài viết mô tả ngắn về bài viết mô tả ngắn về bài viết mô tả ngắn về bài viết ...........</p>
+                        </div>
+                        <footer class="entry-footer text-right">
+                            <a href="" class="more-link btn btn-link">
+                                XEM TIẾP BÀI VIẾT
+                                <i class="icon fa fa-long-arrow-right"></i>
+                            </a>
+                        </footer>
+                    </div>
+                </article>
+            </div>
+            <!-- End Blog Post -->
+        <% end %>
+    </div>
+</section>

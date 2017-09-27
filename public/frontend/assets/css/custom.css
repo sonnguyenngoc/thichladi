@@ -36,115 +36,142 @@ body {
 	color: #fff;
 }
 .footer-top-area .twitter-list a:hover {
-	color: #fdb714;
+color: #fdb714;
 }
 .footer-top-area h2 {
-	margin: 0 0 20px 0;
+margin: 0 0 20px 0;
 }
 .footer-socials {
-	margin-top: 20px;
+margin-top: 20px;
 }
 .payment-methods {
-	opacity: 1;
+opacity: 1;
 }
 .payment-methods span {
-	margin-left: 10px;
+margin-left: 10px;
 }
 [class*="fa-flag"] {
-	background-image: url(../images/icons/vietnam.png);
+background-image: url(../images/icons/vietnam.png);
 }
 .deal-single a.download-document {
-	color: #fff;
+color: #fff;
 }
 .deal-single a.download-document:hover {
-	color: #ff0000;
+color: #ff0000;
 }
 .nav-coupon-category li a img {
-    width: 24px;
-    margin: 0 15px 0 10px;
-    text-align: center;
+width: 24px;
+margin: 0 15px 0 10px;
+text-align: center;
 }
 .all-cat a.menu-view-all {
-	font-weight: bold;
-	color: #ff6000;
+font-weight: bold;
+color: #ff6000;
 }
 .footer-top-area .footer-links ul li a:before, .footer-top-area .twitter-list span, .footer-hotline i {
-	color: #01b7f2;
+color: #01b7f2;
 }
 .newsletter-form .form-control, .btn.btn-o {
-    border-color: #01b7f2;
+border-color: #01b7f2;
 }
 .btn {
-	background-color: #01b7f2;
+background-color: #01b7f2;
 }
 .btn:hover, .btn.hover, .btn:focus, .btn.focus, .btn:active, .btn.active {
-	background-color: #01ace4;
-    border-color: #01ace4;
+background-color: #01ace4;
+border-color: #01ace4;
 }
 .nav-menu-fixed > a, .nav-menu > li:hover > a, .nav-menu > li.active > a {
-	background-color: #01b7f2;
+background-color: #01b7f2;
 }
 .nav-coupon-category li a:hover > span, .call-now .fa, .call-now:before, .call-now:after {
-	background-color: #01ace4;
+background-color: #01ace4;
 }
 .entry .entry-date > h4 {
-	background: #01b7f2;
+background: #01b7f2;
 }
 .nav-top .fa, a:hover, a:focus, .btn.btn-link, .btn.btn-o, .nav-menu > li > ul li:hover > a, .nav-menu > li > ul li.active > a {
-	color: #01b7f2;
+color: #01b7f2;
 }
 .price {
-	color: #01b7f2;
-	font-weight: bold;
+color: #01b7f2;
+font-weight: bold;
 }
 .price-sale {
-	color: #b8b894;
+color: #b8b894;
 }
 .color-green {
-	color: #e44049 !important;
+color: #e44049 !important;
 }
 .btn.btn-o:hover, .btn.btn-o.hover, .btn.btn-o:focus, .btn.btn-o.focus, .btn.btn-o:active, .btn.btn-o.active {
-	border-color: #01b7f2;
-	color: #fff;
-	font-weight: bold;
+border-color: #01b7f2;
+color: #fff;
+font-weight: bold;
 }
 .nav-menu > li > a, .nav-menu > a, .nav-menu > li ul li a {
-	font-weight: bold;
+font-weight: bold;
 }
 .nav-menu > li > ul, .nav-menu > li > ul > li ul, .nav-menu .mega-menu {
-	min-width: 221px;
+min-width: 221px;
 }
 .nav-coupon-category li a {
-	color: #000;
+color: #000;
 }
 .deal-single a.color-h-lighter {
-	color: #fff !important;
+color: #fff !important;
 }
 .deal-single a.color-h-lighter:hover {
-	opacity: 0.8;
+opacity: 0.8;
 }
 h5.color-black, p.color-black {
-	color: #000 !important;
+color: #000 !important;
 }
 h5.color-black:hover {
-	color: #01b7f2 !important;
+color: #01b7f2 !important;
 }
 .nav-top > li > a:hover {
-	color: #e44049;
+color: #e44049;
 }
 form span.text-required {
-	color: #ff0000;
+color: #ff0000;
 }
 .clear-ptb {
-	padding-top: 0px !important;
+padding-top: 0px !important;
 }
 .custom-embed-responsive {
-    padding-bottom: 35%;
+padding-bottom: 35%;
 }
 a.color-hotline, a.color-email {
-	color: #000;
-	font-weight: bold;
+color: #000;
+font-weight: bold;
 }
 .contact-area, .color-mid {
-	color: #000 !important;
+color: #000 !important;
+}
+.pagination {
+font-size: 13px;
+margin: 5px auto;
+text-align: center;
+}
+.pagination li {
+	display: inline;
+}
+.pagination li.active span, .pagination li.disabled span:hover, .pagination li.next span, .pagination li.prev span, .pagination li a:hover, .pagination li.active span:hover {
+border-color: #2ed87b;
+background-color: #2ed87b;
+color: #fff;
+}
+.pagination li.active span, .pagination li.prev span, .pagination li.next span, .pagination li a {
+display: inline-block;
+margin: 0 2px;
+padding: 0 13px;
+line-height: 32px;
+height: 36px;
+border: 2px solid transparent;
+border-radius: 4px;
+transition: all 200ms ease-in-out;
+}
+.pagination li a {
+border-color: #d3d9dd;
+color: #576366;
 }
