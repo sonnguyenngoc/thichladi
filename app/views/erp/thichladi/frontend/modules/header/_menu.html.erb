@@ -24,14 +24,18 @@
                         <a href="javascript:void(0)"><%= Erp::MiniStores::ArticleCategory.get_category_by_alias_blog.article_category_name %></a>
                         <ul>
                             <% Erp::MiniStores::ArticleCategory.get_category_by_alias_blog.children.each do |child_1| %>
-                            <li>
-                                <%= link_to child_1.article_category_name, menu_link(child_1), title: child_1.article_category_name %>
-                                <ul>
-                                    <% child_1.children.get_active.each do |child_2| %>
-                                    <li><%= link_to child_2.article_category_name, menu_link(child_2), title: child_2.article_category_name %></li>
-                                    <% end %>
-                                </ul>
-                            </li>
+                                <% if child_1.children.count > 0 %>
+                                    <li>
+                                        <%= link_to child_1.article_category_name, blog_link(child_1), title: child_1.article_category_name, class: "fix-click" %>
+                                        <ul>
+                                            <% child_1.children.get_active.each do |child_2| %>
+                                            <li><%= link_to child_2.article_category_name, blog_link(child_2), title: child_2.article_category_name %></li>
+                                            <% end %>
+                                        </ul>
+                                    </li>
+                                <% else %>
+                                    <li><%= link_to child_1.article_category_name, blog_link(child_1), title: child_1.article_category_name %></li>
+                                <% end %>
                             <% end %>
                         </ul>
                     </li>

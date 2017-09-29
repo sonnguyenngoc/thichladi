@@ -1,11 +1,10 @@
 <% if Erp::Tours::Tour.get_discount_tours.count > 0 %>
-<section class="section latest-deals-area ptb-30">
+<section class="section latest-deals-area pt-20">
     <header class="panel ptb-15 prl-20 pos-r mb-5">
         <h3 class="section-title font-18">TOUR KHUYẾN MÃI</h3>
-        <a class="btn btn-o btn-xs pos-a right-10 pos-tb-center">XEM TẤT CẢ</a>
     </header>
     <div class="row row-masnory row-tb-20">
-        <% Erp::Tours::Tour.get_discount_tours.each do |tour| %>
+        <% Erp::Tours::Tour.get_discount_tours.limit(6).each do |tour| %>
             <div class="col-sm-6 col-lg-4">
                 <div class="deal-single panel">
                     <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="<%= tour.image_url.medium if tour.image_url.present? %>">

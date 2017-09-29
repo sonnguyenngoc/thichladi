@@ -23,17 +23,38 @@
                                 <li><%= link_to "Tour Du Lịch Miền Trung", "" %></li>
                                 <li><%= link_to "Tour Du Lịch Miền Nam", "" %></li>
                                 <li><%= link_to "Tour Du Lịch Đông Nam Á", "" %></li>
-                                <li><%= link_to "Hướng Dẫn Đặt Tour", "" %></li>
-                                <li><%= link_to "Chăm Sóc Khách Hàng", "" %></li>
+                                <li><%= link_to "Hướng Dẫn Đặt Tour", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TOUR_GUIDE).nil? ? "" : erp_thichladi.policy_path(
+                                    Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TOUR_GUIDE).id,
+                                    'huong-dan-dat-tour'
+                                ) %></li>
+                                <li><%= link_to "Chăm Sóc Khách Hàng", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_CUSTOMER_CARE).nil? ? "" : erp_thichladi.policy_path(
+                                    Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_CUSTOMER_CARE).id,
+                                    'cham-soc-khach-hang'
+                                ) %></li>
                                 <li><%= link_to "Sitemap", "" %></li>
-                                <li><%= link_to "Giới Thiệu", "" %></li>
+                                <li><%= link_to "Giới Thiệu", erp_thichladi.intro_path %></li>                                
+                                <li><%= link_to "Liên Hệ", erp_thichladi.contact_path %></li>
                                 <li><%= link_to "Hồ Sơ Năng Lực", "" %></li>
-                                <li><%= link_to "Liên Hệ", "" %></li>                                                                            
-                                <li><%= link_to "Điều Khoản Mua Bán Hàng Hóa", "" %></li>
-                                <li><%= link_to "Phương Thức Thanh Toán", "" %></li>
-                                <li><%= link_to "Chính Sách Đổi Trả & Hoàn Tiền", "" %></li>
-                                <li><%= link_to "Chính Sách Bảo Mật Thông Tin Khách Hàng", "" %></li>
-                                <li><%= link_to "Chính Sách Giải Quyết Tranh Chấp & Khiếu Nại", "" %></li>                                           
+                                <li><%= link_to "Điều Khoản Mua Bán Hàng Hóa", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TERMS_OF_SALES).nil? ? "" : erp_thichladi.policy_path(
+                                    Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TERMS_OF_SALES).id,
+                                    'dieu-khoan-mua-ban-hang-hoa'
+                                ) %></li>
+                                <li><%= link_to "Phương Thức Thanh Toán", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_PAYMENT_METHODS).nil? ? "" : erp_thichladi.policy_path(
+                                    Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_PAYMENT_METHODS).id,
+                                    'phuong-thuc-mua-ban'
+                                ) %></li>
+                                <li><%= link_to "Chính Sách Đổi Trả & Hoàn Tiền", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_RETURN_POLICY_AND_REFUND).nil? ? "" : erp_thichladi.policy_path(
+                                    Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_RETURN_POLICY_AND_REFUND).id,
+                                    'chinh-sach-doi-tra-hoan-tien'
+                                ) %></li>
+                                <li><%= link_to "Chính Sách Bảo Mật Thông Tin Khách Hàng", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_PAYMENT_METHODS).nil? ? "" : erp_thichladi.policy_path(
+                                    Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_PAYMENT_METHODS).id,
+                                    'chinh-sach-bao-mat-thong-tin-khach-hang'
+                                ) %></li>
+                                <li><%= link_to "Chính Sách Giải Quyết Tranh Chấp & Khiếu Nại", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_POLICY_OF_DISPUTES_COMPLAINTS).nil? ? "" : erp_thichladi.policy_path(
+                                    Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_POLICY_OF_DISPUTES_COMPLAINTS).id,
+                                    'chinh-sach-giai-quyet-tranh-chap-khieu-nai'
+                                ) %></li>                                      
                             </ul>
                         </div>
                     </div>
@@ -77,7 +98,7 @@
                                 </li>
                                 <li class="single-twitter">
                                     <p class="color-light">
-                                        <strong><span>Tel: &nbsp;</span></strong><a href="tel:">(+84) 028 3853 3318</a> &nbsp;-&nbsp; <a href="tel:">(+84)028 3853 3321</a>
+                                        <strong><span>Tel: &nbsp;</span></strong><a href="tel:">(+84) 028 3853 3318</a> &nbsp;-&nbsp; <a href="tel:">(+84) 028 3853 3321</a>
                                     </p>
                                 </li>
                                 <li class="single-twitter">

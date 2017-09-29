@@ -1,0 +1,84 @@
+<div class="page-container ptb-10">
+    <div class="container">
+        <div class="row row-rl-10 row-tb-20">
+            <div class="page-content col-xs-12 col-sm-8 col-md-9">
+                <!-- Checkout Area -->
+                <section class="section checkout-area panel prl-30 pt-20 pb-40">
+                    <h2 class="h3 mb-20 h-title"><strong>Đặt Tour:</strong> <%= @tour.tour_name %></h2>
+                    <form class="mb-30">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>HỌ & TÊN</label>
+                                    <input type="text" class="form-control" placeholder="Nhập họ & tên tại đây...">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>SỐ ĐIỆN THOẠI</label>
+                                    <input type="text" class="form-control" placeholder="Nhập số điện thoại tại đây...">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>ĐỊA CHỈ EMAIL</label>
+                                    <input type="text" class="form-control" placeholder="Nhập địa chỉ email tại đây...">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>ĐỊA CHỈ</label>
+                                    <input type="text" class="form-control" placeholder="Nhập địa chỉ tại đây...">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label>LỜI NHẮN</label>
+                                    <textarea type="text" class="form-control" placeholder="Nhập lời nhắn tại đây..."></textarea>
+                                </div>
+                            </div>
+                        </div>                                            
+                        <a href="#" class="btn btn-lg btn-rounded mr-10">ĐẶT TOUR</a>
+                    </form>
+                </section>
+                <!-- End Checkout Area -->
+            </div>
+            <div class="page-sidebar col-xs-12 col-sm-4 col-md-3">
+                <!-- Blog Sidebar -->
+                <aside class="sidebar blog-sidebar">
+                    <div class="row row-tb-10">
+                        <div class="col-xs-12">
+                            <!-- Recent Posts -->
+                            <div class="widget checkout-widget panel p-20">
+                                <div class="widget-body">
+                                    <table class="table mb-15">
+                                        <tbody>
+                                            <tr>
+                                                <td class="color-mid"><strong>Địa điểm</strong></td>
+                                                <td><%= @tour.area_position %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="color-mid"><strong>Phương tiện</strong></td>
+                                                <td><%= @tour.transportation %></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="color-mid"><strong>Thời gian</strong></td>
+                                                <td><%= @tour.time_line %></td>
+                                            </tr>
+                                            <tr class="font-15">
+                                                <td class="color-mid"><strong>GIÁ TOUR</strong></td>
+                                                <td class="color-green"><strong><%= format_price(@tour.price) %></strong></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- End Recent Posts -->
+                        </div>
+                    </div>
+                </aside>
+                <!-- End Blog Sidebar -->
+            </div>
+        </div>
+    </div>
+</div>

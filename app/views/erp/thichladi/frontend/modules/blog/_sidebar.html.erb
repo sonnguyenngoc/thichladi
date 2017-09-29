@@ -8,73 +8,20 @@
                 </div>
                 <div class="widget-body ptb-20">
                     <ul>
-                        <% (0..5).each do |category| %>
-                        <li>
-                            <a href="<%=  %>">
-                                Tên chuyên mục <span>01</span>
-                            </a>
-                        </li>
+                        <% @main_category.children.each do |category| %>
+                            <li>
+                                <a href="<%= erp_thichladi.blog_path(category) %>">
+                                    <%= category.article_category_name %>
+                                </a>
+                            </li>
                         <% end %>
                     </ul>
                 </div>
             </div>
             <!-- End Categories Widget -->
-        </div>
-        <div class="col-xs-12">
-            <!-- Recent Posts -->
-            <div class="widget recent-posts panel pt-20 prl-20">
-                <h3 class="widget-title h-title">Tin Du Lịch Mới Nhất</h3>
-                <div class="widget-body ptb-30">
-                    <% (0..4).each do |blog_lastest| %>
-                    <div class="recent-post media">
-                        <div class="post-thumb media-left">
-                            <%= link_to image_tag("/frontend/assets/images/thumb_1.jpg", title: "",
-                                        alt: "", class: "media-object"), "", title: "" %>
-                        </div>
-                        <div class="media-body">
-                            <h5 class="font-15 mb-10">
-                                <%= link_to "Tiêu đề bài viết", erp_thichladi.blog_detail_path, title: "" %>
-                            </h5>
-                            <ul class="post-meta list-inline">
-                                <li><i class="ico fa fa-calendar mr-5"></i><%= "26/09/2017" %></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <% end %>
-                </div>
-            </div>
-            <!-- End Recent Posts -->
-        </div>                        
-        <div class="col-xs-12">
-            <!-- Subscribe Widget -->
-            <div class="widget subscribe-widget panel pt-20 prl-20">
-                <h3 class="widget-title h-title">Subscribe to mail</h3>
-                <div class="widget-content ptb-30">
-
-                    <p class="color-mid mb-20">Get our Daily email newsletter with Special Services, Updates, Offers and more!</p>
-                    <form method="post" action="#">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Your Email Address" required="required">
-                            <span class="input-group-btn">
-                                <button class="btn" type="submit">Sign Up</button>
-                            </span>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-            <!-- End Subscribe Widget -->
-        </div>
-        <div class="col-xs-12">
-            <!-- Contact Us Widget -->
-            <div class="widget contact-us-widget panel pt-20 prl-20">
-                <h3 class="widget-title h-title">Góp Ý & Liên Hệ</h3>
-                <div class="widget-body ptb-30">
-                    <%= link_to '<i class="mr-10 font-15 fa fa-envelope-o"></i> Gửi Lời Nhắn'.html_safe,
-                                erp_thichladi.contact_path, title: "Gửi Lời Nhắn", class: "btn btn-block" %>
-                </div>
-            </div>
-            <!-- End Contact Us Widget -->
-        </div>                        
+        </div>        
+        <%= render "erp/thichladi/frontend/modules/newest_article" %>                                        
+        <%= render "erp/thichladi/frontend/modules/newsletter" %>
+        <%= render "erp/thichladi/frontend/modules/contact" %>
     </div>
 </aside>

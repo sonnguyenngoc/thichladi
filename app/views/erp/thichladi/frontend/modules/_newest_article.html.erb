@@ -1,0 +1,25 @@
+<div class="col-xs-12">
+  <!-- Recent Posts -->
+  <div class="widget recent-posts panel pt-20 prl-20">
+      <h3 class="widget-title h-title">Tin Du Lịch Mới Nhất</h3>
+      <div class="widget-body ptb-30">
+          <% Erp::MiniStores::Article.get_newest_articles.limit(5).each do |blog_lastest| %>
+          <div class="recent-post media">
+              <div class="post-thumb media-left">
+                  <%= link_to image_tag(blog_lastest.image_url.system, title: blog_lastest.article_name,
+                              alt: blog_lastest.article_name, class: "media-object"), erp_thichladi.blog_detail_path(blog_lastest), title: blog_lastest.article_name %>
+              </div>
+              <div class="media-body">
+                  <h5 class="font-15 mb-10">
+                      <%= link_to truncate(blog_lastest.article_name, length: 40), erp_thichladi.blog_detail_path(blog_lastest), title: blog_lastest.article_name %>
+                  </h5>
+                  <ul class="post-meta list-inline">
+                      <li><i class="ico fa fa-calendar mr-5"></i><%= blog_lastest.created_at.strftime("%d/%m/%Y") %></li>
+                  </ul>
+              </div>
+          </div>
+          <% end %>
+      </div>
+  </div>
+  <!-- End Recent Posts -->
+</div>

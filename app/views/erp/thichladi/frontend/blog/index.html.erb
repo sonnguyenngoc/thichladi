@@ -1,38 +1,36 @@
-<div class="page-container ptb-60">
+<div class="page-container ptb-20">
     <div class="container">
         <div class="row row-masnory row-rl-10 row-tb-20">
             <div class="page-content col-xs-12 col-sm-7 col-md-8">
                 <!-- Blog Area -->
                 <div class="blog-area blog-grid blog-3-col">
                     <div class="row row-tb-20">
-                        <% (0..9).each do |blog| %>
+                        <% @blogs.each do |blog| %>
                         <!-- Blog Post -->
                         <div class="blog-post col-xs-12 col-sm-6">
                             <article class="entry panel">
-                                <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="/frontend/assets/images/post_01.jpg">
+                                <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="<%= blog.image_url.medium if blog.image_url.present? %>">
                                     <div class="entry-date">
-                                        <h4>29</h4>
-                                        <h6>09</h6>
+                                        <h4><%= blog.created_at.strftime("%d") %></h4>
+                                        <h6><%= blog.created_at.strftime("%m") %></h6>
                                     </div>
                                 </figure>
                                 <div class="entry-wrapper pt-20 pb-10 prl-20">
                                     <header class="entry-header">
                                         <h4 class="entry-title mb-10 mb-md-15 font-xs-16 font-sm-18 font-md-16 font-lg-16">
-                                            <%= link_to "Tiêu đề bài viết", erp_thichladi.blog_detail_path, title: "" %>                                            
+                                            <%= link_to blog.article_name, blog_detail_link(blog), title: blog.article_name %>                                            
                                         </h4>
                                         <div class="entry-meta mb-10">
                                             <ul class="tag-info list-inline">
-                                                <li><i class="icon fa fa-folder-open"></i> Một Thoáng Quê Hương</li>
+                                                <li><i class="icon fa fa-folder-open"></i> <%= blog.article_category_name %></li>
                                             </ul>
                                         </div>
                                     </header>
                                     <div class="entry-content">
-                                        <p class="entry-summary">
-                                            Nội dung tin tức rút gọn tại đây...
-                                        </p>
+                                        <p class="entry-summary text-justify"><%= truncate(blog.content.html_safe, length: 100) if blog.content.present? %></p>
                                     </div>
                                     <footer class="entry-footer text-right">
-                                        <%= link_to 'Xem chi tiết <i class="icon fa fa-long-arrow-right"></i>'.html_safe, erp_thichladi.blog_detail_path, class: "more-link btn btn-link" %>
+                                        <%= link_to 'Xem chi tiết <i class="icon fa fa-long-arrow-right"></i>'.html_safe, blog_detail_link(blog), class: "more-link btn btn-link" %>
                                     </footer>
                                 </div>
                             </article>
@@ -40,32 +38,17 @@
                         <!-- End Blog Post -->
                         <% end %>
                     </div>
+                    <% if @blogs.count > 10 %>
                     <!-- Blog Pagination -->
                     <div class="page-pagination text-center mt-30 p-10 panel">
                         <nav>
                             <!-- Page Pagination -->
-                            <ul class="page-pagination">
-                                <li><a class="page-numbers previous" href="#">Previous</a>
-                                </li>
-                                <li><a href="#" class="page-numbers">1</a>
-                                </li>
-                                <li><span class="page-numbers current">2</span>
-                                </li>
-                                <li><a href="#" class="page-numbers">3</a>
-                                </li>
-                                <li><a href="#" class="page-numbers">4</a>
-                                </li>
-                                <li><span class="page-numbers dots">...</span>
-                                </li>
-                                <li><a href="#" class="page-numbers">20</a>
-                                </li>
-                                <li><a href="#" class="page-numbers next">Next</a>
-                                </li>
-                            </ul>
-                            <!-- End Page Pagination -->
+                            <%= will_paginate @blogs, previous_label: 'Trang trước', next_label: 'Trang sau', renderer: BootstrapPagination::Rails %>
+                            <!-- End Page Pagination -->      
                         </nav>
                     </div>
                     <!-- End Blog Pagination -->
+                    <% end %>
                 </div>
                 <!-- End Blog Area -->
             </div>

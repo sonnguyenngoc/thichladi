@@ -10,8 +10,17 @@ module Erp
         erp_thichladi.tour_detail_path(tour_id: tour.id, tour_title: url_friendly(tour.name))
       end
       
+      def tour_booking_link(tour)
+        erp_thichladi.tour_booking_path(tour_id: tour.id, tour_title: url_friendly(tour.tour_name))
+      end
+      
       def blog_link(blog)
-        erp_thichladi.tour_path(blog_id: blog.id, title: url_friendly(blog.name))
+        erp_thichladi.blog_path(blog_id: blog.id, title: url_friendly(blog.name))
+      end
+      
+      # article link
+      def blog_detail_link(blog_detail)
+        erp_thichladi.blog_detail_path(blog_detail_id: blog_detail.id, blog_title: url_friendly(blog_detail.name))
       end
       
       def count_down(from_time, to_time)

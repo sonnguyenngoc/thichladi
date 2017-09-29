@@ -1,0 +1,94 @@
+<!-- Page Container -->
+<div class="page-container ptb-30">
+    <div class="container">
+        <div class="row row-rl-10 row-tb-20">
+            <div class="page-content col-xs-12 col-sm-7 col-md-8">
+                <!-- Blog Area -->
+                <div class="blog-area blog-single-post">
+                    <div class="row row-tb-20">
+                        <!-- Blog Post -->
+                        <div class="blog-post col-xs-12">
+                            <article class="entry panel">
+                                <% if @article.image_url.present? %>
+                                <figure class="entry-media post-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="<%= @article.image_url.large if @article.image_url.present? %>" style="background-image: url(&quot;<%= @article.image_url.large if @article.image_url.present? %>&quot;);">
+                                </figure>
+                                <% end %>
+                                <div class="entry-wrapper prl-20 prl-md-30 pt-20 pt-md-30 pb-15">
+                                    <header class="entry-header">
+                                        <h1 class="entry-title mb-10 mb-md-15"><%= @article.article_name %></h1>
+                                    </header>
+                                    <div class="entry-content text-justify">
+                                        <%= @article.content.html_safe if @article.content.present? %>
+                                    </div>
+                                    <!-- .entry-wrapper -->
+                                    <footer class="entry-footer">
+                                        <ul class="share-buttons ptb-20">
+                                            <li><a class="fb-share" href="#"><i class="fa fa-facebook"></i> Share</a>
+                                            </li>
+                                            <li><a class="gplus-share" href="#"><i class="fa fa-google-plus"></i> Share</a>
+                                            </li>
+                                        </ul>
+                                    </footer>
+                                </div>
+                            </article>                            
+                        </div>
+                        <!-- End Blog Post -->                        
+                    </div>
+                </div>
+                <!-- End Blog Area -->
+            </div>
+            <div class="page-sidebar col-md-4 col-sm-5 col-xs-12">
+                <!-- Blog Sidebar -->
+                <aside class="sidebar blog-sidebar">
+                    <div class="row row-tb-10">
+                        <div class="col-xs-12">
+                            <!-- Categories Widget -->
+                            <div class="widget categories-widget panel pt-20 prl-20">
+                                <div class="widget-header">
+                                    <h3 class="widget-title h-title">THÔNG TIN KHÁCH HÀNG</h3>
+                                </div>
+                                <div class="widget-body ptb-20">
+                                    <ul>
+                                        <li><%= link_to "Hướng Dẫn Đặt Tour", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TOUR_GUIDE).nil? ? "" : erp_thichladi.policy_path(
+                                            Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TOUR_GUIDE).id,
+                                            'huong-dan-dat-tour'
+                                        ) %></li>
+                                        <li><%= link_to "Chăm Sóc Khách Hàng", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_CUSTOMER_CARE).nil? ? "" : erp_thichladi.policy_path(
+                                            Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_CUSTOMER_CARE).id,
+                                            'cham-soc-khach-hang'
+                                        ) %></li>
+                                        <li><%= link_to "Điều Khoản Mua Bán Hàng Hóa", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TERMS_OF_SALES).nil? ? "" : erp_thichladi.policy_path(
+                                            Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TERMS_OF_SALES).id,
+                                            'dieu-khoan-mua-ban-hang-hoa'
+                                        ) %></li>
+                                        <li><%= link_to "Phương Thức Thanh Toán", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_PAYMENT_METHODS).nil? ? "" : erp_thichladi.policy_path(
+                                            Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_PAYMENT_METHODS).id,
+                                            'phuong-thuc-mua-ban'
+                                        ) %></li>
+                                        <li><%= link_to "Chính Sách Đổi Trả & Hoàn Tiền", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_RETURN_POLICY_AND_REFUND).nil? ? "" : erp_thichladi.policy_path(
+                                            Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_RETURN_POLICY_AND_REFUND).id,
+                                            'chinh-sach-doi-tra-hoan-tien'
+                                        ) %></li>
+                                        <li><%= link_to "Chính Sách Bảo Mật Thông Tin Khách Hàng", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_PAYMENT_METHODS).nil? ? "" : erp_thichladi.policy_path(
+                                            Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_PAYMENT_METHODS).id,
+                                            'chinh-sach-bao-mat-thong-tin-khach-hang'
+                                        ) %></li>
+                                        <li><%= link_to "Chính Sách Giải Quyết Tranh Chấp & Khiếu Nại", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_POLICY_OF_DISPUTES_COMPLAINTS).nil? ? "" : erp_thichladi.policy_path(
+                                            Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_POLICY_OF_DISPUTES_COMPLAINTS).id,
+                                            'chinh-sach-giai-quyet-tranh-chap-khieu-nai'
+                                        ) %></li>    
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- End Categories Widget -->
+                        </div>                        
+                        <%= render "erp/thichladi/frontend/modules/newsletter" %>
+                        <%= render "erp/thichladi/frontend/modules/contact" %>                        
+                    </div>
+                </aside>
+                <!-- End Blog Sidebar -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Container -->

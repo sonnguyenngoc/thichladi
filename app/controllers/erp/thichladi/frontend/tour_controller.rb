@@ -12,6 +12,7 @@ module Erp
         end
         
         def booking
+          @tour = Erp::Tours::Tour.find(params[:tour_id])
         end
         
         def thank_you

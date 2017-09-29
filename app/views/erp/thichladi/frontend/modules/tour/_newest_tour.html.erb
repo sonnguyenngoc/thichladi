@@ -1,0 +1,35 @@
+<% if Erp::Tours::Tour.get_discount_tours.count > 1 %>
+<div class="col-xs-12">
+  <!-- Latest Deals Widegt -->
+  <div class="widget latest-deals-widget panel prl-20">
+      <div class="widget-body ptb-20">
+          <div class="owl-slider" data-loop="true" data-autoplay="true" data-autoplay-timeout="10000" data-smart-speed="1000" data-nav-speed="false" data-nav="true" data-xxs-items="1" data-xxs-nav="true" data-xs-items="1" data-xs-nav="true" data-sm-items="1" data-sm-nav="true" data-md-items="1" data-md-nav="true" data-lg-items="1" data-lg-nav="true">
+              <% Erp::Tours::Tour.get_discount_tours.limit(6).each do |tour| %>
+              <div class="latest-deals__item item">
+                  <figure class="deal-thumbnail embed-responsive embed-responsive-4by3" data-bg-img="<%= tour.image_url.medium if tour.image_url.present? %>">
+                      <% if tour.percent_discount.present? %>
+                        <div class="label-discount left-10 top-15"><%= format_number(tour.percent_discount) %>%</div>
+                        <% end %>
+                      <ul class="deal-actions top-10 left-10">
+                          <% if tour.tour_program.present? %>
+                          <li>                                                
+                              <span>
+                                  <%= link_to '<i class="fa fa-download"></i>'.html_safe, tour.tour_program_url, class: "download-document", title: "Tải lịch trình tour", target: "_blank" %>
+                              </span>                                                
+                          </li>
+                          <% end %>
+                      </ul>
+                      <div class="deal-about p-10 pos-a bottom-0 left-0">
+                          <h5 class="deal-title mb-10">
+                              <%= link_to tour.tour_name, tour_link(tour), title: tour.tour_name, class: "color-lighter" %>                              
+                          </h5>
+                      </div>
+                  </figure>
+              </div>
+              <% end %>
+          </div>
+      </div>
+  </div>
+  <!-- End Latest Deals Widegt -->
+</div>
+<% end %>
