@@ -1,5 +1,6 @@
 <div class="page-container ptb-10">
     <div class="container">
+        <% if @tours.count > 0 %>
         <section class="section deals-area ptb-10">
             <div class="row row-masnory row-tb-20">
                 <% @tours.each do |tour| %>
@@ -76,5 +77,18 @@
             <!-- End Page Pagination -->
             <% end %>
         </section>
+        <% else %>
+        <section class="error-page-area">
+            <div class="container">
+                <div class="error-page-wrapper t-center">
+                    <div class="error-page-footer">
+                            Hiện chưa có tour du lịch cho chuyên mục này
+                        </p>
+                    </div>
+                    <%= link_to "Quay về trang chủ", erp_thichladi.root_path, class: "btn btn-rounded", title: "Quay về trang chủ" %>
+                </div>
+            </div>
+        </section>
+        <% end %>
     </div>
 </div>

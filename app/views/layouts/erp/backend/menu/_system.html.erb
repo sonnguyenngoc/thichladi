@@ -1,8 +1,10 @@
-<li class="nav-item <%= "active open" if ["erp/backend/users"].include?(params[:controller]) %>">
+<li class="nav-item <%= "active open" if ["erp/backend/users",
+                                          "erp/newsletters/backend/newsletters"].include?(params[:controller]) %>">
     <a href="javascript:;" class="nav-link nav-toggle">
         <i class="fa fa-cogs"></i>
         <span class="title"><%= t(".system") %></span>
-        <% if ["erp/backend/users"].include?(params[:controller]) %>
+        <% if ["erp/backend/users",
+               "erp/newsletters/backend/newsletters"].include?(params[:controller]) %>
             <span class="selected"></span>
             <span class="arrow open"></span>
         <% else %>
@@ -10,6 +12,14 @@
         <% end %>
     </a>
     <ul class="sub-menu">
+        <li class="nav-item <%= "active open" if ["erp/backend/newsletters"].include?(params[:controller]) %>">
+            <a href="<%= erp_newsletters.backend_newsletters_path %>" class="nav-link ">
+                <span class="title"><%= t(".newsletters") %></span>
+                <% if ["erp/backend/newsletters"].include?(params[:controller]) %>
+                <span class="selected"></span>
+                <% end %>
+            </a>
+        </li>
         <li class="nav-item <%= "active open" if ["erp/backend/users"].include?(params[:controller]) %>">
             <a href="<%= erp.backend_users_path %>" class="nav-link ">
                 <span class="title"><%= t(".users") %></span>

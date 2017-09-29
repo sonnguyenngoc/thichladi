@@ -17,6 +17,7 @@ vi:
           system:
             system: "Hệ thống"
             users: "Danh sách tài khoản"
+            newsletters: "Đăng ký nhận tin mới"
           main_menu:
             menu: "Quản lý menu"
             menus: "Danh sách menu"

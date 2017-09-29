@@ -49,26 +49,21 @@
                                 </div>
                                 <div class="widget-body ptb-20">
                                     <ul>
-                                        <li>
-                                            <a href="">Hướng Dẫn Đặt Tour</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Hướng Dẫn Đặt Tour</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Hướng Dẫn Đặt Tour</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Hướng Dẫn Đặt Tour</a>
-                                        </li>
-                                        <li>
-                                            <a href="">Hướng Dẫn Đặt Tour</a>
-                                        </li>
+                                        <li><%= link_to "Hướng Dẫn Đặt Tour", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TOUR_GUIDE).nil? ? "" : erp_thichladi.policy_path(
+                                            Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TOUR_GUIDE).id,
+                                            'huong-dan-dat-tour'
+                                        ) %></li>
+                                        <li><%= link_to "Chăm Sóc Khách Hàng", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_CUSTOMER_CARE).nil? ? "" : erp_thichladi.policy_path(
+                                            Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_CUSTOMER_CARE).id,
+                                            'cham-soc-khach-hang'
+                                        ) %></li>
+                                        <li><%= link_to "Hồ Sơ Năng Lực", "" %></li>
                                     </ul>
                                 </div>
                             </div>
                             <!-- End Categories Widget -->
-                        </div>                        
+                        </div>
+                        <%= render "erp/thichladi/frontend/modules/newest_article" %>
                         <%= render "erp/thichladi/frontend/modules/newsletter" %>
                         <%= render "erp/thichladi/frontend/modules/contact" %>                        
                     </div>

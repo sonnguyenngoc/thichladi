@@ -4,15 +4,14 @@
         <h3 class="widget-title h-title">ĐĂNG KÝ NHẬN TIN GIẢM GIÁ</h3>
         <div class="widget-content ptb-30">
             <p class="color-mid mb-20">Chúng tôi hoàn toàn không spam hay chia sẻ với đơn vị thứ ba.</p>
-            <form method="post" action="#">
+            <%= form_for Erp::Newsletters::Newsletter.new, url: erp_thichladi.newsletters_path, html: {class: ""} do |f| %>
                 <div class="input-group">
-                    <input type="email" class="form-control" placeholder="Email đăng ký..." required="required">
+                    <input type="email" name="newsletter[email]" size="55" class="form-control" placeholder="Email đăng ký..." required>
                     <span class="input-group-btn">
                         <button class="btn" type="submit">Đăng ký ngay</button>
                     </span>
                 </div>
-            </form>
-
+            <% end %>
         </div>
     </div>
     <!-- End Subscribe Widget -->

@@ -9,6 +9,12 @@ module Erp
         def policy
           @article = Erp::MiniStores::ArticleCategory.find(params[:category_id]).articles.where(archived: false).last
         end
+        
+        def success_newsletter
+        end
+        
+        def error_newsletler
+        end
       end
     end
   end

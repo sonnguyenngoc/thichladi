@@ -27,7 +27,7 @@
                                         </div>
                                     </header>
                                     <div class="entry-content">
-                                        <p class="entry-summary text-justify"><%= truncate(blog.content.html_safe, length: 100) if blog.content.present? %></p>
+                                        <p class="entry-summary text-justify"><%= truncate(strip_tags(blog.content.html_safe), length: 180) if blog.content.present? %></p>
                                     </div>
                                     <footer class="entry-footer text-right">
                                         <%= link_to 'Xem chi tiết <i class="icon fa fa-long-arrow-right"></i>'.html_safe, blog_detail_link(blog), class: "more-link btn btn-link" %>

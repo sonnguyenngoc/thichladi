@@ -3,6 +3,7 @@
     <div class="container">
         <div class="section deals-header-area ptb-10">
             <div class="row row-tb-20">
+                <% if @home_menus.count > 0 || @home_categories.count > 0 %>
                 <div class="col-xs-12 col-md-4 col-lg-3">
                     <aside>
                         <ul class="nav-coupon-category panel">
@@ -31,48 +32,26 @@
                         </ul>
                     </aside>
                 </div>
+                <% end %>
                 <div class="col-xs-12 col-md-8 col-lg-9">
                     <%= render "erp/thichladi/frontend/modules/home/slideshow" %>
                 </div>
             </div>
-        </div>
-        <div class="section explain-process-area">
-            <div class="row row-rl-10">
-                <% (0..2).each do |marketing| %>
-                <div class="col-md-4">
-                    <div class="item panel prl-15 ptb-20">
-                        <div class="row row-rl-5 row-xs-cell">
-                            <a href="" class="marketing">
-                                <div class="col-xs-4 valign-middle">
-                                    <img class="pr-10" src="/frontend/assets/images/du-lich-tu-tin.png" alt="">
-                                </div>
-                                <div class="col-xs-8">
-                                    <h5 class="mb-10 pt-5 color-black">TIÊU ĐỀ QUẢNG BÁ</h5>
-                                    <p class="color-mid color-black">Nội dung quảng bá thương hiệu thichladi.info</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <% end %>
-            </div>
-        </div>
-        
+        </div>        
         <%= render "erp/thichladi/frontend/modules/home/discount_tours" %>
         <%= render "erp/thichladi/frontend/modules/home/hot_tours" %>
-        <%= render "erp/thichladi/frontend/modules/home/news_lastest" %>
-        
+        <%= render "erp/thichladi/frontend/modules/home/news_lastest" %>        
         <section class="section subscribe-area t-center">
             <div class="newsletter-form">
                 <h4 class="mb-20"><i class="fa fa-envelope-o color-green mr-10"></i>ĐĂNG KÝ NHẬN THÔNG TIN TOUR GIẢM GIÁ</h4>
-                <form method="post" action="">
+                <%= form_for Erp::Newsletters::Newsletter.new, url: erp_thichladi.newsletters_path, html: {class: ""} do |f| %>
                     <div class="input-group mb-10">
-                        <input type="email" class="form-control bg-white" placeholder="Email đăng ký nhận thông tin tour giảm giá...">
+                        <input type="email" name="newsletter[email]" size="55" class="form-control bg-white" required placeholder="Email đăng ký nhận thông tin tour giảm giá...">
                         <span class="input-group-btn">
                             <button class="btn" type="submit">ĐĂNG KÝ NGAY</button>
                         </span>
                     </div>
-                </form>
+                <% end %>
                 <p class="color-muted"><small>Chúng tôi hoàn toàn không spam hay chia sẻ với đơn vị thứ ba.</small> </p>
             </div>
         </section>

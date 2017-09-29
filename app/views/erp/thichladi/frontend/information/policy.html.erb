@@ -69,8 +69,8 @@
                                             Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_RETURN_POLICY_AND_REFUND).id,
                                             'chinh-sach-doi-tra-hoan-tien'
                                         ) %></li>
-                                        <li><%= link_to "Chính Sách Bảo Mật Thông Tin Khách Hàng", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_PAYMENT_METHODS).nil? ? "" : erp_thichladi.policy_path(
-                                            Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_PAYMENT_METHODS).id,
+                                        <li><%= link_to "Chính Sách Bảo Mật Thông Tin Khách Hàng", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_INFORMATION_SECURITY).nil? ? "" : erp_thichladi.policy_path(
+                                            Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_INFORMATION_SECURITY).id,
                                             'chinh-sach-bao-mat-thong-tin-khach-hang'
                                         ) %></li>
                                         <li><%= link_to "Chính Sách Giải Quyết Tranh Chấp & Khiếu Nại", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_POLICY_OF_DISPUTES_COMPLAINTS).nil? ? "" : erp_thichladi.policy_path(

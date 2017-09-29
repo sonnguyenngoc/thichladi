@@ -9,4 +9,8 @@ Erp::Thichladi::Engine.routes.draw do
   get "dat-tour(/:tour_id)(/:tour_title).html" => "frontend/tour#booking", as: :tour_booking
   get "dat-tour/thanh-cong.html" => "frontend/tour#thank_you", as: :tour_thank_you
   get "thong-tin/:category_id(/:title).html" => "frontend/information#policy", as: :policy
+  get "dang-ky-thanh-cong.html" => "frontend/information#success_newsletter", as: :success_newsletter
+  get "dang-ky-khong-thanh-cong.html" => "frontend/information#error_newsletler", as: :error_newsletler
+  get "dang-ky-nhan-tin.html" => "frontend/newsletters#add_email_to_newsletter", as: :newsletters
+  post "dang-ky-nhan-tin.html" => "frontend/newsletters#add_email_to_newsletter"
 end

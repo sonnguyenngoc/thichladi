@@ -2,7 +2,9 @@
     <% Erp::MiniStores::Slideshow.get_active.each do |slider| %>
     <div class="deal-single panel item">
         <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="<%= slider.image_url.large %>">
+            <% if slider.title.present? %>
             <div class="label-discount top-10 right-10"><%= slider.title %></div>
+            <% end %>
             <div class="deal-about p-20 pos-a bottom-0 left-0">
                 <div class="rating mb-10">
                     <span class="rating-stars" data-rating="5">
