@@ -9,17 +9,15 @@
             <div class="header-search col-md-9">
                 <div class="row row-tb-10 ">
                     <div class="col-sm-12">
-                        <form class="search-form">
+                        <form class=search-form" method="GET" action="<%= erp_thichladi.tour_search_path %>">
                             <div class="input-group">
-                                <input type="text" class="form-control input-lg search-input" placeholder="Tìm kiếm tại đây..." required="required">
+                                <input type="text" name="tour_name" class="form-control input-lg search-input" placeholder="Tìm kiếm tại đây...">
                                 <div class="input-group-btn">
                                     <div class="input-group">
-                                        <select class="form-control input-lg search-select">
-                                            <option>Lựa chọn </option>
-                                            <option>Tour Miền Bắc</option>
-                                            <option>Tour Miền Trung</option>
-                                            <option>Tour Miền Nam</option>
-                                            <option>Tour Đông Nam Á</option>
+                                        <select name="menu_id" class="form-control input-lg search-select">                                            
+                                            <% Erp::Tours::Menu.get_menus.each do |menu| %>
+                                            <option value="<%= menu.id %>"><%= menu.menu_name %></option>
+                                            <% end %>
                                         </select>
                                         <div class="input-group-btn">
                                             <button type="submit" class="btn btn-lg btn-search btn-block">
