@@ -6,13 +6,19 @@
                     <h1 class="mb-10 h3"><%= tour.name %></h1>
                     <ul class="deal-meta list-inline mb-10 color-mid">
                         <% if tour.area_position.present? %>
-                            <li><i class="ico fa fa-map-marker mr-10"></i><%= tour.area_position %></li>
+                            <li><i class="ico fa fa-map-marker mr-10 mb-5"></i><%= tour.area_position %></li>
                         <% end %>
                         <% if tour.transportation.present? %>
-                            <li><i class="ico fa fa-rocket mr-10"></i><%= tour.transportation %></li>
+                            <li><i class="ico fa fa-rocket mr-10 mb-5"></i><%= tour.transportation %></li>
                         <% end %>
                         <% if tour.time_line.present? %>
-                            <li><i class="ico fa fa-clock-o mr-10"></i><%= tour.time_line %></li>
+                            <li><i class="ico fa fa-clock-o mr-10 mb-5"></i><%= tour.time_line %></li>
+                        <% end %>
+                        <% if tour.hotel.present? %>
+                            <li><i class="ico fa fa-building mr-10"></i><%= tour.hotel %></li>
+                        <% end %>
+                        <% if tour.tour_program.present? %>
+                            <li><i class="ico fa fa-cloud-download mr-10"></i><%= link_to "Chương trình tour", tour.tour_program_url %></li>
                         <% end %>
                     </ul>
                     <% if tour.description.present? %>
@@ -29,7 +35,7 @@
                         </h2>
                     </div>
                     <div class="buy-now mb-10">
-                        <a href="<%= tour_booking_link(tour) %>" class="btn btn-block btn-lg">
+                        <a href="<%= erp_thichladi.tour_booking_path(tour_id: tour.id) %>" class="btn btn-block btn-lg">
                             <i class="fa fa-check font-16 mr-10"></i> ĐẶT TOUR NGAY
                         </a>
                     </div>

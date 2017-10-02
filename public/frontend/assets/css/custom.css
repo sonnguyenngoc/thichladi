@@ -178,3 +178,15 @@ color: #576366;
 .news-tour {
 	
 }
+.color-muted {
+	color: #000 !important;
+}
+#booking_tour label span.required {
+	color: #ff0000;
+}
+#booking_tour label.error {
+	display: none !important;
+}
+#booking_tour input.error:focus {
+	border-color: #ff0000;
+}

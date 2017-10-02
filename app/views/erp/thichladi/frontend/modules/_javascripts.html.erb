@@ -25,10 +25,18 @@
 <!-- Coutdown -->
 <%= javascript_include_tag "/frontend/assets/vendors/countdown/jquery.countdown.js" %>
 
+<!-- jquery validate -->
+<%= javascript_include_tag 'http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js' %>
+
 <!-- ––––––––––––––––––––––––––––––––––––––––– -->
 <!-- Custom Template JavaScript                   -->
 <!-- ––––––––––––––––––––––––––––––––––––––––– -->
 <%= javascript_include_tag "/frontend/assets/js/main.js" %>
 <script type="text/javascript">
 (function(d,s,id){var z=d.createElement(s);z.type="text/javascript";z.id=id;z.async=true;z.src="//static.zotabox.com/d/f/dfa81f853230cadf91bb52eb0f6d0105/widgets.js";var sz=d.getElementsByTagName(s)[0];sz.parentNode.insertBefore(z,sz)}(document,"script","zb-embed-code"));
+</script>
+<script>
+    jQuery(document).ready(function($){
+        $("#booking_tour").validate();
+    });
 </script>
