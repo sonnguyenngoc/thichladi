@@ -39,7 +39,7 @@
                                 <% end %>
                             </ul>
                             <% if tour.description.present? %>
-                            <p class="text-muted mb-20 text-justify"><%= truncate(strip_tags(tour.description.html_safe), length: 180) if tour.description.present? %></p>
+                            <p class="text-muted mb-20 text-justify"><%= truncate(strip_tags(tour.description.html_safe), length: 130) if tour.description.present? %></p>
                             <% end %>
                         </div>
                         <div class="deal-price pos-r mb-15">

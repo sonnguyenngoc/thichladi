@@ -30,7 +30,7 @@
                         </header>
                         <div class="entry-content">
                             <p class="entry-summary text-justify">
-                                <%= truncate(strip_tags(blog.content.html_safe), length: 180) if blog.content.present? %>
+                                <%= truncate(strip_tags(blog.content.html_safe), length: 130) if blog.content.present? %>
                             </p>
                         </div>
                         <footer class="entry-footer text-right">
