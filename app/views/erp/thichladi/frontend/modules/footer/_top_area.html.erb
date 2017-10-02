@@ -19,10 +19,9 @@
                         <div class="footer-links">
                             <h2 class="color-lighter">LIÊN KẾT NHANH</h2>
                             <ul>
-                                <li><%= link_to "Tour Du Lịch Miền Bắc", "" %></li>
-                                <li><%= link_to "Tour Du Lịch Miền Trung", "" %></li>
-                                <li><%= link_to "Tour Du Lịch Miền Nam", "" %></li>
-                                <li><%= link_to "Tour Du Lịch Đông Nam Á", "" %></li>
+                                <% Erp::Tours::Menu.get_home_menus.each do |menu| %>
+                                <li><%= link_to menu.menu_name, menu_link(menu), title: menu.menu_name %></li>
+                                <% end %>
                                 <li><%= link_to "Hướng Dẫn Đặt Tour", Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TOUR_GUIDE).nil? ? "" : erp_thichladi.policy_path(
                                     Erp::MiniStores::ArticleCategory.get_active.find_by_alias(Erp::MiniStores::ArticleCategory::ALIAS_TOUR_GUIDE).id,
                                     'huong-dan-dat-tour'

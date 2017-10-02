@@ -1,3 +1,24 @@
+<% content_for :metas do %>
+    <!-- for Facebook -->
+    <meta property="og:url" content="<%= request.url %>"/>
+    <meta property="og:type" content="website" />
+    <% if @title.present? %>
+        <meta property="og:title" content="<%= @title.html_safe %>"/>
+    <% else %>
+        <meta property="og:title" content="ThichLaDi.Info"/>
+    <% end %>
+    <% if @meta_description.present? %>
+        <meta property="og:description" content="<%= @meta_description %>"/>
+    <% else %>
+        <meta property="og:description" content="Du Lịch Khám Phá Mới - Chuyên tour Miền Tây, Phú Quốc, Bình Ba, Bình Hưng, Nam Du, Hải Tặc. Chuyên tour đoàn, tổ chức event, team building."/>
+    <% end %>
+    <% if @meta_image.present? %>
+        <meta property="og:image" content="http://thichladi.info/<%= @meta_image.img_seo %>"/>
+    <% else %>
+        <meta property="og:image" content="http://thichladi.info/frontend/assets/images/image-for-share.png"/>
+    <% end %>    
+<% end %>
+
 <div class="page-container ptb-10">
     <div class="container">
         <% if @tours.count > 0 %>
@@ -8,7 +29,7 @@
                     <div class="deal-single panel">
                         <figure class="deal-thumbnail embed-responsive embed-responsive-16by9" data-bg-img="<%= tour.image_url.medium if tour.image_url.present? %>">
                             <% if tour.is_discount == true && tour.percent_discount.present? %>
-                            <div class="label-discount left-20 top-15"><%= tour.percent_discount %>%</div>
+                            <div class="label-discount left-20 top-15"><%= format_number(tour.percent_discount) %>%</div>
                             <% end %>
                             <ul class="deal-actions top-15 right-20">
                                 <% if tour.tour_program.present? %>
@@ -23,15 +44,6 @@
                         </figure>
                         <div class="bg-white pt-20 pl-20 pr-15">
                             <div class="pr-md-10">
-                                <div class="rating mb-10">
-                                    <span class="rating-stars rate-allow" data-rating="4">
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                        <i class="fa fa-star-o"></i>
-                                    </span>
-                                </div>
                                 <h3 class="deal-title mb-10">
                                     <%= link_to tour.tour_name, tour_link(tour), title: tour.tour_name %>                                    
                                 </h3>
@@ -47,7 +59,7 @@
                                     <% end %>
                                 </ul>
                                 <% if tour.description.present? %>
-                                <p class="text-muted mb-20 text-justify"><%= tour.description if tour.description.present? %></p>
+                                <p class="text-muted mb-20 text-justify"><%= truncate(strip_tags(tour.description.html_safe), length: 180) if tour.description.present? %></p>
                                 <% end %>
                             </div>
                             <div class="deal-price pos-r mb-15">

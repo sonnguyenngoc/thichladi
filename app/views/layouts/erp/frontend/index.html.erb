@@ -21,16 +21,30 @@
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- PAGE TITLE                                -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
-    <title>Thích Là Đi | Công Ty TNHH MTV Du Lịch Khám Phá Mới</title>
+    <title>
+		<% if @title.present? %>
+			<%= @title %> | ThichLaDi.Info
+		<% else %>
+			ThichLaDi.Info | Khám Phá Mới, Trải Nghiệm Mới
+		<% end %>
+	</title>
 
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- SEO METAS                                 -->
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
-    <meta name="description" content="">
-    <meta name="keyworks" content="">
-    <meta name="robots" content="noindex, nofollow">
+    <% if @meta_description.present? %>
+	<meta name="description" content="<%= @meta_description %>">
+	<% else %>
+	<meta name="description" content="Du Lịch Khám Phá Mới - Chuyên tour Miền Tây, Phú Quốc, Bình Ba, Bình Hưng, Nam Du, Hải Tặc. Chuyên tour đoàn, tổ chức event, team building.">
+	<% end %>
+	<% if @meta_keywords.present? %>
+	<meta name="keywords" content="<%= @meta_keywords %>">
+	<% else %>
+	<meta name="keywords" content="du lịch khám phá mới, du lich kham pha moi, tour miền tây, tour phú quốc, tour bình ba, tour bình hưng, tour nam du, tour hải tặc, tour đoàn, event, team building, sinh nhật, noel, trung thu">
+	<% end %>
     <meta name="author" content="Công Ty TNHH Du Lịch Khám Phá Mới">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= yield(:metas) %>
 
     <!-- ––––––––––––––––––––––––––––––––––––––––– -->
     <!-- PAGE FAVICON                              -->

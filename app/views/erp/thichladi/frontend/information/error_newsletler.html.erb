@@ -1,3 +1,19 @@
+<% content_for :metas do %>
+    <!-- for Facebook -->
+    <meta property="og:url" content="<%= request.url %>"/>
+    <meta property="og:type" content="website" />
+    <% if @title.present? %>
+        <meta property="og:title" content="<%= @title.html_safe %>"/>
+    <% else %>
+        <meta property="og:title" content="ThichLaDi.Info"/>
+    <% end %>
+    <% if @meta_description.present? %>
+        <meta property="og:description" content="<%= @meta_description %>"/>
+    <% else %>
+        <meta property="og:description" content="Du Lịch Khám Phá Mới - Chuyên tour Miền Tây, Phú Quốc, Bình Ba, Bình Hưng, Nam Du, Hải Tặc. Chuyên tour đoàn, tổ chức event, team building."/>
+    <% end %>
+    <meta property="og:image" content="http://thichladi.info/frontend/assets/images/image-for-share.png"/>
+<% end %>
 <div class="page-container ptb-10">
     <div class="container">
         <section class="error-page-area">

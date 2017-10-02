@@ -24,15 +24,6 @@
                     </figure>
                     <div class="bg-white pt-20 pl-20 pr-15">
                         <div class="pr-md-10">
-                            <div class="rating mb-10">
-                                <span class="rating-stars rate-allow" data-rating="4">
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                    <i class="fa fa-star-o"></i>
-                                </span>
-                            </div>
                             <h3 class="deal-title mb-10">
                                 <%= link_to tour.tour_name, tour_link(tour), title: tour.tour_name %>                                    
                             </h3>
@@ -48,7 +39,7 @@
                                 <% end %>
                             </ul>
                             <% if tour.description.present? %>
-                            <p class="text-muted mb-20 text-justify"><%= tour.description if tour.description.present? %></p>
+                            <p class="text-muted mb-20 text-justify"><%= truncate(strip_tags(tour.description.html_safe), length: 180) if tour.description.present? %></p>
                             <% end %>
                         </div>
                         <div class="deal-price pos-r mb-15">
