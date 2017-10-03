@@ -31,7 +31,6 @@ module Erp
           @tour_booking = Erp::Tours::TourBooking.new(tour_booking_params)
           if @tour_booking.save
             Erp::Tours::TourMailer.sending_admin_email_tour_confirmation(@tour_booking).deliver_now
-            Erp::Tours::TourMailer.sending_customer_email_tour_confirmation(@tour_booking).deliver_now
             redirect_to erp_thichladi.tour_thankyou_path
           else          
             puts @tour_booking.errors.to_json

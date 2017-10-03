@@ -1,6 +1,8 @@
 Erp::Thichladi::Engine.routes.draw do
   root to: "frontend/home#index"
   get "lien-he.html" => "frontend/contact#index", as: :contact
+  post "lien-he.html" => "frontend/contact#index"
+  get "lien-he/thanh-cong.html" => "frontend/contact#thank_you", as: :contact_thankyou
   get "gioi-thieu.html" => "frontend/information#intro", as: :intro
   get "tin-tuc-du-lich(/:blog_id)(/:title).html" => "frontend/blog#index", as: :blog
   get "chi-tiet-bai-viet(/:blog_detail_id)(/:blog_title).html" => "frontend/blog#detail", as: :blog_detail

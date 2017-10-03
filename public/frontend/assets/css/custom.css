@@ -190,3 +190,12 @@ color: #576366;
 #booking_tour input.error:focus {
 	border-color: #ff0000;
 }
+#message label span.required {
+	color: #ff0000;
+}
+#message label.error {
+	display: none !important;
+}
+#message input.error:focus {
+	border-color: #ff0000;
+}
